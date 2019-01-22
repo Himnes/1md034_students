@@ -8,7 +8,7 @@ Before you submit the final version of your labs, make sure that your project fu
 
 ## 01 Git
 
-- [ ] Fork and clone the 1md034_students repository
+- [X] Fork and clone the 1md034_students repository
 
 
 ## 02 HTML
@@ -18,7 +18,7 @@ Create an index.html file which contains:
 - [ ] A section to select burgers that contains at least three items. Each item has:
 	- [ ] A name
 	- [ ] An image
-	- [ ] Information about allergies 
+	- [ ] Information about allergies
 - [ ] A section to collect customer information:
 	- [ ] First- and Last Name (in one field)
 	- [ ] E-Mail Address
@@ -46,7 +46,7 @@ Create a menu.js file which contains:
 - [ ] At least five different burgers with respective attributes
 
 Create a js_script.js file which contains:
-- [ ] A MenuItem constructor 
+- [ ] A MenuItem constructor
 - [ ] A function that defines at least five different burgers using the MenuItem constructor and adds them to an array
 - [ ] A function that loops through the array and inserts the information to the burger selection section of the index.html file
 - [ ] A function that loads the information from the menu.js json object and inserts the information to the burger selection section of the index.html file
@@ -69,7 +69,7 @@ Create a vue_script.js file which contains:
     - [ ] A location on the map
     - [ ] The order information
     - [ ] The customer information
-    
+
 ## Optional
 - [ ] Set the orderID on client side so one customer can make multiple orders
 - [ ] Only allow the order to be sent if all necessary information are provided
