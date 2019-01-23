@@ -13,12 +13,101 @@
 <section>
 <h2>Select your burgler</h2>
 <br />
-<h2>Bunnie & side</h2>
-<img src="https://thumbs.dreamstime.com/t/two-delicious-hamburgers-wood-background-41938851.jpg" title="Bunnie & Side"
+<table>
+  <thead>
+    <tr>
+<th><h2>Bunnie & side</h2></th>
+<th><h2>The Phantom</h2></th>
+<th><h2>Ninja Burger</h2></th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+<p> <td><img src="https://www.franksredhot.com/-/media/franksus18/recipe-images/franks-redhot-bacon-cheeseburger.ashx" style="width:300px;height:300px;" ></td></p>
+<td><img src="http://www.ezic.com.tr/en/wp-content/uploads/sites/4/2015/01/Hamburger-300x300.jpg" style="width:300px;height:300px;"></td>
+<td><img src="http://www.redrobinpa.com/wp-content/uploads/2011/02/royal-red-robin-burger-217-300x300.jpeg" style="width:300px;height:300px;"></td>
+</tr>
+</tbody>
+<br />
+<tfoot>
+  <tr>
+<td><ul>
+  <li>Vegetables: Onions, Tomatoes</li>
+  <li>Meat: Made from lamb</li>
+  <li>Bread: Available gluten-free</li>
+</ul></td>
+<td><ul>
+  <li>Vegetables: A little</li>
+  <li>Meat: Made from beef</li>
+  <li>Bread: Super fluffy</li>
+</ul></td>
+<td><ul>
+  <li>Vegetables: A lot</li>
+  <li>Meat: Made from fish</li>
+  <li>Bread: Exists</li>
+</ul></td>
+</tr>
+</tfoot>
+</table>
 </section>
   <section>
 <h2>Please enter the following information</h2>
 <br />
+<h3>Delivery Information</h3>
+<form>
+  <p>
+    <label for="fullname">Full name</label><br>
+    <input type="text" id="fullname" name="fn" required="required" placeholder="First and last name">
+  </p>
+<p>
+  <label for="email">Email</label><br>
+    <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+</p>
+<p>
+  <label for="Streetadress">Street Name</label><br>
+  <input type="text" id="Streetadress" name="ln" placeholder="Street Name">
+</p>
+<p>
+  <label for="housenumber">House Number</label><br>
+  <input type="text" id="housenumber" name="ln" placeholder="House Number">
+</p>
+</form>
+</section>
+<section>
+  <p>
+    <label for="payment">Payment Options</label><br>
+    <select id="payment" name="payment">
+        <option selected>Swish</option>
+        <option>Master Card</option>
+        <option>Cash (on Arrival)</option>
+        <option>Klarna</option>
+        <option>Maetro</option>
+    </select>
+</p>
+</section>
+<section>
+  <form>
+    <p>
+      <label for="gender">Gender</label><br>
+      <label for="male">Male</label>
+      <input type="radio" id="male" name="fn" required="required">
+    </p>
+    <p>
+      <label for="female">Female</label>
+      <input type="radio" id="female" name="fn" required="required">
+    </p>
+    <p>
+      <label for="nonbinary">Non-Binary</label>
+      <input type="radio" id="nonbinary" name="fn" required="required">
+    </p>
+    <p>
+      <label for="undisclosed">Undisclosed</label>
+      <input type="radio" id="undisclosed" name="fn" required="required" checked>
+    </p>
+  </form>
+</section>
+<section>
+  <button type="submit">Place my order!</button>
 </section>
 <hr>
 <footer>
