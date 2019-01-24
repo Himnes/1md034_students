@@ -1,0 +1,14 @@
+body {
+    font-family: arial; font-size: 1.1em;
+}
+.allergies#gluten {
+    color: #ff5500;
+}
+
+#gluten {
+    text-transform: uppercase;
+}
+
+#lactose {
+    text-transform: uppercase;
+}
