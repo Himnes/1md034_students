@@ -1,10 +1,19 @@
 body {
-    font-family: arial; font-size: 1.1em;
+    font-family: arial;
+    /*font-size: 1.1em;*/
+    font-size: 1.1em;
 }
 
 section {
   margin: 10px;
 }
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 6vw;
+    }
+}
+
 .header {
   width: auto;
   height: 200px;
@@ -69,31 +78,57 @@ section button{
 .wrapper {
      display: grid;
      grid-gap: 10px;
-     grid-template-columns: 100px 100px 100px;
-     background-color: #fff;
-     color: #444;
+     grid-template-columns: 400px 400px 400px;
  }
 
  .box {
-     background-color: #444;
-     color: #fff;
      border-radius: 5px;
      padding: 20px;
-     font-size: 150%;
+     text-align: center;
  }
 
- .a {
-     grid-column: 1 / span 2;
+ .list {
+   margin-left: 50px;
  }
- .b {
+
+ .title1 {
+     grid-column: 1;
+     grid-row: 1;
+ }
+ .title2 {
+     grid-column: 2 ;
+     grid-row: 1
+ }
+ .title3 {
      grid-column: 3 ;
-     grid-row: 1 / span 2;
+     grid-row: 1 ;
  }
- .c {
+ .image1 {
      grid-column: 1 ;
      grid-row: 2 ;
  }
- .d {
+
+ .image2 {
      grid-column: 2 ;
      grid-row: 2 ;
+ }
+
+ .image3 {
+     grid-column: 3 ;
+     grid-row: 2 ;
+ }
+
+ .list1 {
+     grid-column: 1 ;
+     grid-row: 3 ;
+ }
+
+ .list2 {
+     grid-column: 2 ;
+     grid-row: 3 ;
+ }
+
+ .list3 {
+     grid-column: 3 ;
+     grid-row: 3 ;
  }
