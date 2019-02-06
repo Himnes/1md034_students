@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+      <script src="https://vuejs.org/js/vue.js"></script>
+
       <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>The Usual Hamburger</title>
         <meta charset="utf-8"/>
@@ -18,38 +20,22 @@
 
 <section class="Selection">
 
-<h2>Select your burger</h2>
-<div class="wrapper">
-
-
-<div class="box title1"><h2>Bunnie & side</h2></div>
-<div class="box title2"><h2>The Phantom</h2></div>
-<div class="box title3"><h2>Ninja Burger</h2></div>
-
-<div class="box image1"><img src="https://www.franksredhot.com/-/media/franksus18/recipe-images/franks-redhot-bacon-cheeseburger.ashx" style="width:300px;height:300px;" ></div>
-<div class="box image2"><img src="http://www.ezic.com.tr/en/wp-content/uploads/sites/4/2015/01/Hamburger-300x300.jpg" style="width:300px;height:300px;"></div>
-<div class="box image3"><img src="http://www.redrobinpa.com/wp-content/uploads/2011/02/royal-red-robin-burger-217-300x300.jpeg" style="width:300px;height:300px;"></div>
-
-<br />
-
-<div class="list list1"><ul>
-  <li>Vegetables: Onions, Tomatoes</li>
-  <li>Meat: Made from lamb</li>
-  <li>Bread: Available gluten-free</li>
-  <li>Other info: Contains <span id="lactose" class="allergies" >lactose</span></li>
-</ul></div>
-<div class="list list2"><ul>
-  <li>Vegetables: A little</li>
-  <li>Meat: Made from beef</li>
-  <li>Bread: Super fluffy</li>
-  <li>Other info: Contains <span id="lactose" class="allergies" >lactose</span></li>
-</ul></div>
-<div class="list list3"><ul>
-  <li>Vegetables: A lot</li>
-  <li>Meat: Made from fish</li>
-  <li>Bread: Exists</li>
-  <li>Other info: Contains <span id="gluten" class="allergies" >gluten</span></li>
-</ul></div>
+<div class="wrapper" id="myID">
+  <h2>{{ arbitraryVariableName }}</h2>
+  <div v-for="(burger,index) in burgers" v-bind:style = "`grid-column: ${+index +1}`" class="box">
+        <h4 v-bind:style = "`grid-row: ${+index +1}`">{{ burger.name }}</h4>
+        <img v-bind:style = "`grid-row: ${+index +2}`" class = "picture" :src = "burger.picture" style=width:150px;height:150px;>
+        <ul v-bind:style = "`grid-row: ${+index +3}`" style=height:84px;width:200px;>
+          <li class="list">{{burger.description}}</li>
+          <li class="list" v-if = burger.gluten>Other info: Contains <span id="gluten" class="allergies" >gluten</span></li>
+          <li class="list" v-if = burger.lactose>Other info: Contains <span id="lactose" class="allergies" >lactose</span></li>
+      </ul>
+      <br>
+      <label class="check" v-bind:style = "`grid-row: ${+index +4}`">Order here!
+      <input type="checkbox" name="ch" :id = "burger.name" >
+    </label>
+  </div>
+</div>
 </section>
   <section class="Order">
 <h2>Please enter the following information</h2>
@@ -65,8 +51,8 @@
     <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
 </p>
 <p>
-  <label for="Streetadress">Street Name</label><br>
-  <input type="text" id="Streetadress" name="ln" placeholder="Street Name">
+  <label for="streetadress">Street Name</label><br>
+  <input type="text" id="streetadress" name="ln" placeholder="Street Name">
 </p>
 <p>
   <label for="housenumber">House Number</label><br>
@@ -87,30 +73,35 @@
     <p>
       <label for="gender">Gender</label><br>
       <label for="male">Male</label>
-      <input type="radio" id="male" name="fn" required="required">
+      <input type="radio" id="male" name="g" required="required">
     </p>
     <p>
       <label for="female">Female</label>
-      <input type="radio" id="female" name="fn" required="required">
+      <input type="radio" id="female" name="g" required="required">
     </p>
     <p>
       <label for="nonbinary">Non-Binary</label>
-      <input type="radio" id="nonbinary" name="fn" required="required">
+      <input type="radio" id="nonbinary" name="g" required="required">
     </p>
     <p>
       <label for="undisclosed">Undisclosed</label>
-      <input type="radio" id="undisclosed" name="fn" required="required" checked>
+      <input type="radio" id="undisclosed" name="g" required="required" checked>
     </p>
   </form>
 </section>
   <section class="order button">
-  <button type="submit">Place my order!</button>
+  <button v-on:click="clicked(key)" id="orderbutton" type="submit">Place my order!</button>
 </section>
 <hr>
 <footer>
   <p>
 <h5>&copy;Hypotetical Burgers.Inc</h5></span>
 </p>
-</div>
+<p id="dispOrder">
+</p>
+
+<script type="text/javascript" src="js/menu.js" defer></script>
+<script src="js/js_script.js" defer></script>
+ <script src="js/vue_script.js" defer></script>
     </body>
 </html>

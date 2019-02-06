@@ -17,6 +17,7 @@ section {
     }
 }
 
+
 .header {
   width: auto;
   height: 200px;
@@ -44,9 +45,10 @@ section {
   background-color: #000000;
   color: #ffffff;
   border: 1px dashed #ffffff;
+  background-size:cover;
 }
 
-.Selection h2 {
+.Selection #myID {
   text-align: center;
 }
 
@@ -72,66 +74,37 @@ section button{
   margin-top: 20px;
 }
 
-.table {
-  width: auto;
-  margin: auto;
-  border-spacing: 70px 2px;
-}
-
 .wrapper {
      display: grid;
-     grid-gap: 10px;
-     grid-template-columns: 400px 400px 400px;
+     grid-row: auto;
+     grid-column: auto;
+     height: auto;
+     max-width: 100%;
+     width: auto;
+     overflow-x: scroll;
+     overflow-y: scroll;
  }
 
  .box {
-     border-radius: 5px;
-     padding: 20px;
      text-align: center;
+     grid-row: auto;
+     grid-column: auto;
+     width:200px;
+     margin-left: 20px;
+     margin-right: 10px;
+     max-width: 100%;
+ }
+
+ .picture {
+   max-width: 100%;
+   height: auto;
  }
 
  .list {
-   margin-left: 50px;
+   text-align: left;
  }
 
- .title1 {
-     grid-column: 1;
-     grid-row: 1;
- }
- .title2 {
-     grid-column: 2 ;
-     grid-row: 1
- }
- .title3 {
-     grid-column: 3 ;
-     grid-row: 1 ;
- }
- .image1 {
-     grid-column: 1 ;
-     grid-row: 2 ;
- }
-
- .image2 {
-     grid-column: 2 ;
-     grid-row: 2 ;
- }
-
- .image3 {
-     grid-column: 3 ;
-     grid-row: 2 ;
- }
-
- .list1 {
-     grid-column: 1 ;
-     grid-row: 3 ;
- }
-
- .list2 {
-     grid-column: 2 ;
-     grid-row: 3 ;
- }
-
- .list3 {
-     grid-column: 3 ;
-     grid-row: 3 ;
+ .ul {
+   height: 84px;
+   width: 200px;
  }
