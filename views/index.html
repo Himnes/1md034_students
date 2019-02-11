@@ -5,6 +5,7 @@
       <script src="https://vuejs.org/js/vue.js"></script>
 
       <link rel="stylesheet" type="text/css" href="css/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>The Usual Hamburger</title>
         <meta charset="utf-8"/>
     </head>
@@ -50,15 +51,24 @@
   <label for="email">Email</label><br>
     <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
 </p>
-<p>
-  <label for="streetadress">Street Name</label><br>
-  <input type="text" id="streetadress" name="ln" placeholder="Street Name">
-</p>
-<p>
-  <label for="housenumber">House Number</label><br>
-  <input type="text" id="housenumber" name="ln" placeholder="House Number">
-</p>
 </form>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DELI-VERY MAP</title>
+  <link rel="stylesheet" href="css/deli-very.css">
+
+  <h1> Click in the map! </h1>
+  <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+  <div class="view-box">
+    <div id="dots" v-on:click="displayOrder">
+      <div v-if="orders!=undefined"
+                v-bind:style="{ left: orders.details.x + 'px', top: orders.details.y + 'px'}">
+          T
+        </div>
+    </div>
+  </div>
+
   <p>
     <label for="payment">Payment Options</label><br>
     <select id="payment" name="payment">
@@ -90,7 +100,7 @@
   </form>
 </section>
   <section class="order button">
-  <button v-on:click="clicked(key)" id="orderbutton" type="submit">Place my order!</button>
+  <button v-on:click="addOrder" id="orderbutton" type="submit">Place my order!</button>
 </section>
 <hr>
 <footer>
@@ -100,8 +110,16 @@
 <p id="dispOrder">
 </p>
 
+<script src="/socket.io/socket.io.js" defer></script>
+<script type="text/javascript" src="js/deli-very.js" defer></script>
+<!--<script src="js/dispatcher.js" defer></script>-->
+
 <script type="text/javascript" src="js/menu.js" defer></script>
+
 <script src="js/js_script.js" defer></script>
  <script src="js/vue_script.js" defer></script>
+
+
+
     </body>
 </html>

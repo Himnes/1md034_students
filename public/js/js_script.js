@@ -4,9 +4,7 @@ function makeArray()
   var arr = [];
   arr[0] = document.getElementById("fullname").value;
   arr[1] = document.getElementById("email").value;
-  arr[2] = document.getElementById("streetadress").value;
-  arr[3] = document.getElementById("housenumber").value;
-  arr[4] = document.getElementById("payment").value;
+  arr[2] = document.getElementById("payment").value;
 
   var rad = document.getElementsByName("g");
 
@@ -15,12 +13,15 @@ function makeArray()
     var bx = rad[i].checked;
     if (bx)
     {
-      arr[5] = rad[i].id;
+      arr[3] = rad[i].id;
     }
   }
 
+  var detaljer = {x: vm.orders.details.x,
+            y: vm.orders.details.y};
+  arr[4] = "Deliver to " + detaljer.x + "x" + " / " + detaljer.y + "y"
   var chec = document.getElementsByName("ch");
-  var index = 6; //because we already have 6 items
+  var index = 5; //because we already have 6 items
   for (var i = 0; i < chec.length; ++i)
   {
     var b = chec[i].checked;
