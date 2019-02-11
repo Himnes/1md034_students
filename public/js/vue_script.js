@@ -12,7 +12,7 @@ function MenuItem(burgername, kcal, glut, lact, pic, desc)
   this.description = desc;
 }
 
-var vm = new Vue({
+var vm2 = new Vue({
   el: '#myID',
   data: {
     arbitraryVariableName: 'Select a burger',
@@ -23,8 +23,13 @@ var vm = new Vue({
 new Vue({
     el: '#orderbutton',
     methods: {
-        clicked: function() {
+        addOrder: function() {
           console.log("button clicked");
+          socket.emit("addOrder", {customer: makeArray().slice(0, 4),
+                                   orderId: Math.floor(Math.random()*1000),
+                                   details: {x: vm.orders.details.x,
+                                             y: vm.orders.details.y},
+                                   orderItems: makeArray().slice(5)});
           document.getElementById("dispOrder").appendChild(document.createTextNode("{{arr}}"));
           new Vue({
             el: "#dispOrder",

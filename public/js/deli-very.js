@@ -7,16 +7,9 @@ var socket = io();
 var vm = new Vue({
   el: '#dots',
   data: {
-    orders: {},
+    orders: undefined,
   },
   created: function () {
-    socket.on('initialize', function (data) {
-      this.orders = data.orders;
-    }.bind(this));
-
-    socket.on('currentQueue', function (data) {
-      this.orders = data.orders;
-    }.bind(this));
   },
   methods: {
     getNext: function () {
@@ -25,14 +18,16 @@ var vm = new Vue({
       }, 0);
       return lastOrder + 1;
     },
-    addOrder: function (event) {
+    displayOrder: function (event) {
       var offset = {x: event.currentTarget.getBoundingClientRect().left,
                     y: event.currentTarget.getBoundingClientRect().top};
-      socket.emit("addOrder", { orderId: this.getNext(),
+
+                    //OrderId and orderItems are "fake" temporary values, real ones are inserted in addOrder in vue_scipt.js
+      let ord = { orderId: "T",
                                 details: { x: event.clientX - 10 - offset.x,
                                            y: event.clientY - 10 - offset.y },
-                                orderItems: ["Beans", "Curry"]
-                              });
-    }
+                                orderItems: ["Beans", "Curry"]};
+      this.orders = ord;
+    },
   }
 });
